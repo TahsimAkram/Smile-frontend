@@ -1,4 +1,3 @@
-import React from "react";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 const Footer = () => {
@@ -53,7 +52,7 @@ const Footer = () => {
             <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
                 <li>+66 064 064 3329</li>
-                <li>Care@SmileBeauty.com</li>
+                <li>Care@SmilesBeauty.com</li>
             </ul>
         </div>
       </div>
