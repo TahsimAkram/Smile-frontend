@@ -11,7 +11,6 @@ const PrivacyPolicy = () => {
     
     </div>
     <div className="flex flex-col sm:flex-row border border-gray-400 h-auto lg:h-[450px]">
-      {/* <img className="w-full" src={assets.cancellation_banner} alt="" /> */}
     </div>
  <PrivacyPolicyItem/>
   </div>
