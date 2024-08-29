@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
             <img src={assets.logo} className='mb-5 w-32' alt="" />
             <p className='w-full md:w-2/3 text-gray-600'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            At Smile Beauty, we believe true beauty starts with a smile. Our luxurious, cruelty-free cosmetics are crafted with the finest ingredients to enhance your natural beauty, helping you feel confident and radiant. Whether for everyday elegance or a bold look, Smile Beauty is here to inspire your beauty journey.
             </p>
         </div>
 
