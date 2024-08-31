@@ -3,6 +3,7 @@ import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
 import ProductItem from "./ProductItem";
 import ProductItemSkeleton from "./skeleton/ProductItemSkeleton";
+import NoData from "./no-data/NoData";
 
 const LatestCollection = () => {
   const { products, productsIsLoading } = useContext(ShopContext);
@@ -21,8 +22,6 @@ const LatestCollection = () => {
           innovations and timeless elegance.
         </p>
       </div>
-
-      {/* Rendering Products */}
       {productsIsLoading ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
           {Array.from({ length: 10 }).map((_, i) => {
@@ -30,7 +29,7 @@ const LatestCollection = () => {
           })}
         </div>
       ) : !productsIsLoading && latestProducts.length === 0 ? (
-        <p>No Data Found</p>
+        <NoData />
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
           {latestProducts.map((item, index) => (
