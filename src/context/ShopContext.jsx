@@ -14,6 +14,7 @@ const ShopContextProvider = (props) => {
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
     const [products, setProducts] = useState([]);
+    const [productsIsLoading, setProductsIsLoading] = useState(false)
     const [token, setToken] = useState('')
     const navigate = useNavigate();
 
@@ -108,19 +109,35 @@ const ShopContextProvider = (props) => {
         return totalAmount;
     }
 
-    const getProductsData = async () => {
-        try {
+    // const getProductsData = async () => {
+    //     try {
 
+    //         const response = await axios.get(backendUrl + '/api/product/list')
+    //         if (response.data.success) {
+    //             setProducts(response.data.products.reverse())
+    //         } else {
+    //             toast.error(response.data.message)
+    //         }
+
+    //     } catch (error) {
+    //         console.log(error)
+    //         toast.error(error.message)
+    //     }
+    // }
+    const getProductsData = async () => {
+        setProductsIsLoading(true) // Set loading to true when the API call starts
+        try {
             const response = await axios.get(backendUrl + '/api/product/list')
             if (response.data.success) {
                 setProducts(response.data.products.reverse())
             } else {
                 toast.error(response.data.message)
             }
-
         } catch (error) {
             console.log(error)
             toast.error(error.message)
+        } finally {
+            setProductsIsLoading(false) // Set loading to false when the API call finishes
         }
     }
 
@@ -152,7 +169,7 @@ const ShopContextProvider = (props) => {
     }, [token])
 
     const value = {
-        products, currency, delivery_fee,
+        productsIsLoading, products, currency, delivery_fee,
         search, setSearch, showSearch, setShowSearch,
         cartItems, addToCart,setCartItems,
         getCartCount, updateQuantity,
